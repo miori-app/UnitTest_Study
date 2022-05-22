@@ -76,4 +76,14 @@ class UpDownGameTests: XCTestCase {
         let promise = expectation(description: "It makes random value") // expectation
         sut.randomValue = 50 // 기본값이 0~30에 포함되면 무조건 테스트에 통과하므로 범위에서 벗어난 값을 할당
 
+        // when
+        sut.makeRandomValue {
+            // then
+            XCTAssertGreaterThanOrEqual(self.sut.randomValue, 0)
+            XCTAssertLessThanOrEqual(self.sut.randomValue, 30)
+            promise.fulfill() // fulfill
+        }
+
+        wait(for: [promise], timeout: 10) // wait
+    }
 }
