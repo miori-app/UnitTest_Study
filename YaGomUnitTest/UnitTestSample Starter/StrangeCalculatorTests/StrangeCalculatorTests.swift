@@ -33,4 +33,17 @@ class StrangeCalculatorTests: XCTestCase {
         XCTAssertEqual(result, 36)
     }
 
+    //MARK: TDD
+    
+    func test_배열의모든합이홀수를반환하는지() {
+        let numbers = [3]
+        let result = sut.addOddNumbers(of: numbers)
+        XCTAssertEqual(result, 3)
+    }
+    
+    func test_배열이0을줄때_0을반환하는지() {
+        let numbers = [0]
+        let reuslt = sut.addOddNumbers(of: numbers)
+        XCTAssertEqual(reuslt, 0)
+    }
 }
