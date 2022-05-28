@@ -40,4 +40,10 @@ class StrangeCalculatorTests: XCTestCase {
         let result = sut.addOddNumbers(of: numbers)
         XCTAssertEqual(result, 3)
     }
+    
+    func test_배열이0을줄때_0을반환하는지() {
+        let numbers = [0]
+        let reuslt = sut.addOddNumbers(of: numbers)
+        XCTAssertEqual(reuslt, 0)
+    }
 }
