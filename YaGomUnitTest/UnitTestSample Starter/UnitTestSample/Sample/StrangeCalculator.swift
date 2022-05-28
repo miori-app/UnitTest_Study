@@ -12,7 +12,7 @@ struct StrangeCalculator {
     
     // for TDD
     func addOddNumbers(of numbers: [Int]) -> Int {
-        return 0
+        return numbers.filter { $0 % 2 == 1 }.reduce(0,+)
     }
     
     func addEvenNumbers(of numbers: [Int]) -> Int {
