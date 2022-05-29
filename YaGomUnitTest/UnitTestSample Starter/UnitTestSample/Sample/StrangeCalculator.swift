@@ -16,6 +16,6 @@ struct StrangeCalculator {
     }
     
     func addEvenNumbers(of numbers: [Int]) -> Int {
-        return 0
+        return numbers.filter { $0 % 2 == 0 }.reduce(0,+)
     }
 }
